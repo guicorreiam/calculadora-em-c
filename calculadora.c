@@ -5,32 +5,31 @@
 
 float n1, n2, n3, n4, resultado;
 int opcao, expoente, ciclo;
-char nome[25];
 
 main(void){
 	
 	setlocale(LC_ALL, "");
 	
 	printf("Calculadora em C# \n");		
-	printf("Qual operação você deseja realizar? \n \n");
+	printf("Qual operação você deseja realizar? \n");
+	printf("\n");
 	
 	printf("Digite 1 para Adição \n");
 	printf("Digite 2 para Subtração \n");
 	printf("Digite 3 para Multiplicação \n");
 	printf("Digite 4 para Divisão \n");
-	printf("Digite 5 para Potência \n");
-	printf("--------------x-------------- \n");
-	printf("Digite 6 para Média com 3 algarismos \n");
-	printf("Digite 7 para Média com 4 algarismos \n");
-	printf("Digite 8 para Média Escolar \n \n");
+	printf("Digite 5 para Potênciação \n");
+	printf("Digite 6 para Radiciação \n");
+	printf("Digite 7 para Média \n");
+	printf("\n");
 	
 	printf("Digite o número correspondente a operação: ");
 	scanf("%d", &opcao);
 	
-	switch(opcao){
-		
-		case 1:
-			printf("\nDigite o primeiro número: ");
+	switch(opcao){		
+		case 1: /* adicao */
+			printf("\n");
+			printf("Digite o primeiro número: ");
 			scanf("%f", &n1);
 	
 			printf("Digite o segundo número: ");
@@ -41,8 +40,9 @@ main(void){
 			printf("O resultado da adição é: %0.2f.", resultado);
 			break;
 		
-		case 2:
-			printf("\nDigite o primeiro número: ");
+		case 2: /* subtracao */
+			printf("\n");
+			printf("Digite o primeiro número: ");
 			scanf("%f", &n1);
 	
 			printf("Digite o segundo número: ");
@@ -53,8 +53,9 @@ main(void){
 			printf("O resultado da subtração é: %0.2f.", resultado);
 			break;
 		
-		case 3:
-			printf("\nDigite o primeiro número: ");
+		case 3: /* multiplicacao */
+			printf("\n");
+			printf("Digite o primeiro número: ");
 			scanf("%f", &n1);
 	
 			printf("Digite o segundo número: ");
@@ -65,8 +66,9 @@ main(void){
 			printf("O resultado da multiplicação é: %0.2f.", resultado);
 			break;
 		
-		case 4:
-			printf("\nDigite o primeiro número: ");
+		case 4: /* divisao */
+			printf("\n");	
+			printf("Digite o primeiro número: ");
 			scanf("%f", &n1);
 	
 			printf("Digite o segundo número: ");
@@ -77,7 +79,7 @@ main(void){
 			printf("O resultado da divisão é: %0.2f.", resultado);
 			break;
 		
-		case 5:
+		case 5: /* potencia */
 			printf("\n");
 			printf("Digite a base: ");
 			scanf("%f", &n1);
@@ -150,78 +152,54 @@ main(void){
 					printf("O resultado da potência é: %0.0f.", resultado);
 					break;							
 			}
-		
-		case 6:
-			printf("\nDigite o primeiro número: ");
-			scanf("%f", &n1);
-	
-			printf("Digite o segundo número: ");
-			scanf("%f", &n2);
-					
-			printf("Digite o terceiro número: ");
-			scanf("%f", &n3);
-					
-			resultado=(n1+n2+n3)/3;
-			printf("\nO resultado da média é: %0.2f.", resultado);
 			break;
 		
-		case 7:
-			printf("\nDigite o primeiro número: ");
-			scanf("%f", &n1);
-	
-			printf("Digite o segundo número: ");
-			scanf("%f", &n2);
-					
-			printf("Digite o terceiro número: ");
-			scanf("%f", &n3);
-					
-			printf("Digite o quarto número: ");
-			scanf("%f", &n4);
-					
-			resultado=(n1+n2+n3+n4)/4;
-			printf("\nO resultado da média é: %0.2f.", resultado);
-			break;
-			
-		case 8:
+		case 6: /* raiz */
 			printf("\n");
-			printf("Digite o nome do aluno: ");
-			scanf("%s", &nome);
+			printf("Digite o número que deseja descobrir a raiz: ");
+			scanf("%f", &n1);
+			resultado = sqrt(n1);
+			printf("A raiz quadrada de %0.0f é de: %0.2f.", n1, resultado);
+			break;
 			
-			printf("Digite a quantidade de ciclos (min.: 3, max.:4): ");
-			scanf("%d", &ciclo);
-			
-			switch(ciclo){
+		case 7: /* média */
+			printf("\n");
+			printf("Deseja realizar média com 3 ou 4 algarismos? \n");
+			printf("Digite 3 para 3 algarismos, e 4 para 4 algarismos: ");
+			scanf("%d", &opcao);
+			switch(opcao){
 				case 3:
-					printf("\nDigite a nota do primeiro ciclo: ");
+					printf("\nDigite o primeiro número: ");
 					scanf("%f", &n1);
 	
-					printf("Digite a nota do segundo ciclo: ");
+					printf("Digite o segundo número: ");
 					scanf("%f", &n2);
 					
-					printf("Digite a nota do terceiro ciclo: ");
+					printf("Digite o terceiro número: ");
 					scanf("%f", &n3);
 					
 					resultado=(n1+n2+n3)/3;
-					printf("\nA média final de %s foi de: %0.1f pontos.", nome, resultado);
+					printf("\nO resultado da média é: %0.2f.", resultado);
 					break;
-				
+		
 				case 4:
-					printf("\nDigite a nota do primeiro ciclo: ");
+					printf("\nDigite o primeiro número: ");
 					scanf("%f", &n1);
 	
-					printf("Digite a nota do segundo ciclo: ");
+					printf("Digite o segundo número: ");
 					scanf("%f", &n2);
 					
-					printf("Digite a nota do terceiro ciclo: ");
+					printf("Digite o terceiro número: ");
 					scanf("%f", &n3);
 					
-					printf("Digite a nota do quarto ciclo: ");
+					printf("Digite o quarto número: ");
 					scanf("%f", &n4);
 					
 					resultado=(n1+n2+n3+n4)/4;
-					printf("\nA média final de %s foi de: %0.1f pontos.", nome, resultado);
+					printf("\nO resultado da média é: %0.2f.", resultado);
 					break;
 			}
+			break;
 	}
 }
 
